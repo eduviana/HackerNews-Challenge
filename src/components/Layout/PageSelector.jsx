@@ -1,12 +1,25 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styles from "../../styles/PageSelector.module.css";
 
 const PageSelector = () => {
   return (
     <div className="container">
       <div className={styles.buttons__container}>
-        <button className={styles.button__active}>All</button>
-        <button className={styles.button}>My faves</button>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "button__active" : "button")}
+          
+        >
+          All
+        </NavLink>
+        <NavLink
+          to="/faves"
+          className={({ isActive }) => (isActive ? "button__active" : "button")}
+          
+        >
+          My faves
+        </NavLink>
       </div>
     </div>
   );

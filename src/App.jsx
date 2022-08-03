@@ -1,19 +1,22 @@
-import 'normalize.css';
-import Card from './components/Card';
-import Dropdown from './components/Dropdown';
-import Layout from './components/Layout/Layout';
-import './global.css'
+import "normalize.css";
+import { Route, Routes } from "react-router-dom";
+import { PostProvider } from "./context/PostProvider";
+import HomePage from "./pages/HomePage";
+import FavesPage from "./pages/FavesPage";
+
+import "./global.css";
 
 
 
 function App() {
-
   return (
-   <Layout>
-      <Dropdown />
-      <Card />
-   </Layout>
-  )
+    <PostProvider>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="faves" element={<FavesPage />} />
+      </Routes>
+    </PostProvider>
+  );
 }
 
-export default App
+export default App;
