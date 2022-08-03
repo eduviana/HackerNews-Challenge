@@ -1,16 +1,23 @@
-import React from 'react'
+import React from "react";
 import styles from "../styles/Dropdown.module.css";
 
 const Dropdown = () => {
   return (
-    
-    <select>
-       <option value="none" selected disabled hidden>Select your news</option>
+    <div className="container">
+      <select className={styles.select__container}>
+        <option defaultValue  hidden>
+          Select your news
+        </option>
         <option value="angular">Angular</option>
         <option value="react">Reactjs</option>
         <option value="vuejs">Vuejs</option>
-    </select>
-  )
-}
+      </select>
 
-export default Dropdown
+
+
+      
+    </div>
+  );
+};
+
+export default Dropdown;

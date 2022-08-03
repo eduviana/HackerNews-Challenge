@@ -3,7 +3,7 @@ import styles from "../../styles/Header.module.css";
 
 const Header = () => {
   return (
-    <div className={styles.background}>
+    <div className={styles.boxShadow}>
       <div className="container">
         <h1 className={styles.title}>HACKER NEWS</h1>
       </div>

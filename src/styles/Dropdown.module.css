@@ -1,0 +1,17 @@
+.select__container {
+  width: 15rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  border: 1.5px solid #2e2e2e;
+  font-family: var(--font-two);
+  font-size: var(--size-two);
+  color: #343434;
+  padding: .3125rem .625rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("../assets/expand.svg");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center;
+}

@@ -18,11 +18,11 @@
 
 .button {
   color: var(--color-font-three);
-  border: 1px solid #d6d6d6;
+  border: 1.5px solid #d6d6d6;
 }
 
 .button__active {
   color: #1797ff;
-  border: 1px solid #1797ff;
+  border: 1.5px solid #1797ff;
   border-right: #d6d6d6;
 }

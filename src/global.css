@@ -4,15 +4,19 @@
   --font-one: "Libre Baskerville", serif;
   --font-one-weight: 400;
   --color-font-one: #3b3b3b;
-  --font-one-size: 28px;
+  --size-one: 28px;
   --font-one-line-height: 28px;
 
   --font-two: "Roboto", sans-serif;
   --color-font-two: #767676;
-  --font-two-size: 11px;
+            /* regular 400*/
+  --size-two: 14px;
+  --size-three: 11px;
 
   --color-font-three: #606060;
-  --font-three-size: 16px;
+                
+                /* medium 500*/
+  --font-three-size: 16px; 
   --font-three-line-height: 28px;
 
   --main-bg-color: #fcfcfc;
@@ -26,10 +30,12 @@
 
 body {
   /* background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%); */
-  background-color: var(--main-bg-color);
+  /* background-color: var(--main-bg-color); */
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
 }
+
