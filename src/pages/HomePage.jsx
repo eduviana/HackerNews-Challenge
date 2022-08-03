@@ -1,20 +1,21 @@
-import React, { useContext } from 'react'
-import { PostContext } from '../context/PostContext'
-import Card from '../components/Card'
-import Dropdown from '../components/Dropdown'
-import Layout from '../components/Layout/Layout'
+import React, { useContext } from "react";
+import { PostContext } from "../context/PostContext";
+import Card from "../components/Card";
+import Dropdown from "../components/Dropdown";
+import Layout from "../components/Layout/Layout";
+import CardWrapper from "../components/CardWrapper";
 
 const HomePage = () => {
+  const { posts, isLoading } = useContext(PostContext);
 
-  // const {hola} = useContext(PostContext);
-  // console.log(hola)
+  console.log(posts);
 
   return (
     <Layout>
       <Dropdown />
-      <Card />
-   </Layout>
-  )
-}
+      <CardWrapper />
+    </Layout>
+  );
+};
 
-export default HomePage
+export default HomePage;

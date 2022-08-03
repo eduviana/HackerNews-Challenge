@@ -3,9 +3,8 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 4rem;
-  width: 34.375rem;
-  height: 5.625rem;
-
+  width: 45%;
+  height: 7rem;
   padding-left: 2.375rem;
   opacity: 0.8;
   border-radius: .375rem;
@@ -46,6 +45,7 @@
   letter-spacing: 0.0156rem;
   max-width: 416px;
   margin: 0;
+  line-height: 1.5rem;
 }
 
 .favorite {
