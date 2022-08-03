@@ -11,21 +11,30 @@ export const PostProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     const searchByDate = async (value = "angular") => {
       try {
         const url = `http://hn.algolia.com/api/v1/search_by_date?query=${value}&page=0`;
         const response = await fetch(url);
-        const {hits} = await response.json();
+        const { hits } = await response.json();
+        // const noEmptyHits = hits.map((hit) => {
+        //   if (
+        //     hit.author === null ||
+        //     hit.story_title === null ||
+        //     hit.created_at === null
+        //   ) {
+        //     return;
+        //   } else {
+        //     return hit;
+        //   }
+        // });
         setPosts(hits);
-        
-
       } catch (error) {
         console.log(error);
       }
     };
-    searchByDate(optionValue)
-    setIsLoading(false)
+    searchByDate(optionValue);
+    setIsLoading(false);
   }, [optionValue]);
 
   return (
@@ -34,7 +43,7 @@ export const PostProvider = ({ children }) => {
         optionPicked,
         optionValue,
         posts,
-        isLoading
+        isLoading,
       }}
     >
       {children}

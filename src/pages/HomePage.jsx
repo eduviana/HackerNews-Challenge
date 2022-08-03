@@ -8,7 +8,7 @@ import CardWrapper from "../components/CardWrapper";
 const HomePage = () => {
   const { posts, isLoading } = useContext(PostContext);
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <Layout>

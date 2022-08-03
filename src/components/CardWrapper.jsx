@@ -6,14 +6,14 @@ import styles from "../styles/CardWrapper.module.css";
 const CardWrapper = () => {
   const { posts, isLoading } = useContext(PostContext);
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div className="container">
       <div className={styles.cards__container}>
         {isLoading
           ? "Loading..."
-          : posts.map((post) => <Card key={post.objectID} post={post} />)}
+          : posts.map((post) => <Card key={post.story_id} post={post} />)}
       </div>
     </div>
   );
