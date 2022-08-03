@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@400;500&display=swap");
+
+:root {
+  --font-one: "Libre Baskerville", serif;
+  --font-one-weight: 400;
+  --color-font-one: #3b3b3b;
+  --font-one-size: 28px;
+  --font-one-line-height: 28px;
+
+  --font-two: "Roboto", sans-serif;
+  --color-font-two: #767676;
+  --font-two-size: 11px;
+
+  --color-font-three: #606060;
+  --font-three-size: 16px;
+  --font-three-line-height: 28px;
+
+  --main-bg-color: #fcfcfc;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%); */
+  background-color: var(--main-bg-color);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}

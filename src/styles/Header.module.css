@@ -1,0 +1,16 @@
+.background {
+  /* background-color: aquamarine; */
+  height: 114px;
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+  box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+}
+
+.title {
+  font-family: var(--font-one);
+  font-size: var(--font-one-size);
+  line-height: var(--font-one-line-height);
+  color: var(--color-font-one);
+  font-weight: var(--font-one-weight);
+  margin: 0;
+  padding: 48px 0;
+}
