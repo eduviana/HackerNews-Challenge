@@ -16,8 +16,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
   align-items: flex-start;
+  padding: 1rem 0;
   gap: .5rem;
 }
 
@@ -43,7 +43,7 @@
   font-weight: 500;
   color: #6b6b6b;
   letter-spacing: 0.0156rem;
-  max-width: 416px;
+  max-width: 86%;
   margin: 0;
   line-height: 1.5rem;
 }
@@ -58,3 +58,27 @@
   /* background-color: #fcfcfc; */
   background-color: #efefef;
 }
+
+
+
+@media (max-width:1200px) {
+  .card__container {
+    width: 46%;
+  }
+
+  .paragraph {
+    max-width: 80%;
+  }
+}
+
+@media (max-width:768px) {
+  .card__container {
+    width: 100%;
+  }
+
+  .paragraph {
+    max-width: 94%;
+  }
+}
+
+
