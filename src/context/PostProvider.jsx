@@ -17,6 +17,7 @@ export const PostProvider = ({ children }) => {
         const url = `http://hn.algolia.com/api/v1/search_by_date?query=${value}&page=0`;
         const response = await fetch(url);
         const { hits } = await response.json();
+      
         // const noEmptyHits = hits.map((hit) => {
         //   if (
         //     hit.author === null ||
@@ -29,12 +30,13 @@ export const PostProvider = ({ children }) => {
         //   }
         // });
         setPosts(hits);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
     searchByDate(optionValue);
-    setIsLoading(false);
+    
   }, [optionValue]);
 
   return (
