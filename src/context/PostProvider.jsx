@@ -18,17 +18,7 @@ export const PostProvider = ({ children }) => {
         const response = await fetch(url);
         const { hits } = await response.json();
       
-        // const noEmptyHits = hits.map((hit) => {
-        //   if (
-        //     hit.author === null ||
-        //     hit.story_title === null ||
-        //     hit.created_at === null
-        //   ) {
-        //     return;
-        //   } else {
-        //     return hit;
-        //   }
-        // });
+      
         setPosts(hits);
         setIsLoading(false);
       } catch (error) {

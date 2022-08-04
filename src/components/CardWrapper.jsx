@@ -2,37 +2,19 @@ import React, { useContext, useEffect, useState } from "react";
 import { PostContext } from "../context/PostContext";
 import Card from "./Card";
 import styles from "../styles/CardWrapper.module.css";
+import { noEmptyPosts } from "../helpers/filterNoEmptyPosts";
 
 const CardWrapper = () => {
+  
   const { posts, isLoading } = useContext(PostContext);
-
-  const [noEmpty, setNoEmpty] = useState([])
-
-
-  const noEmptyPosts = posts.filter(post => {
-
-    const { author, story_title, story_url, created_at } = post;
-    console.log(typeof(post.story_title))
-      if(typeof(author) === 'object' || typeof(story_title) === 'object' || typeof(story_url) === 'object' || typeof(created_at) === 'object') {
-        console.log("vinieron mal")
-        return;
-      } else {
-        return post;
-      }
-  })
-
-  const chargeNoEmpty = () => {
-    setNoEmpty(noEmptyPosts)
-  }
+  const [noEmpty, setNoEmpty] = useState([]);
 
   useEffect(() => {
-    chargeNoEmpty()
-  }, [posts])
-  
+    setNoEmpty(noEmptyPosts(posts));
+  }, [posts]);
 
-  console.log(noEmpty)
+  console.log(noEmpty);
 
-  
   return (
     <div className="container">
       <div className={styles.cards__container}>
