@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { PostContext } from "../context/PostContext";
-import Card from "../components/Card";
+
 import Dropdown from "../components/Dropdown";
 import Layout from "../components/Layout/Layout";
 import CardWrapper from "../components/CardWrapper";
@@ -8,12 +8,10 @@ import CardWrapper from "../components/CardWrapper";
 const HomePage = () => {
   const { posts, isLoading } = useContext(PostContext);
 
-  // console.log(posts);
-
   return (
     <Layout>
       <Dropdown />
-      <CardWrapper />
+      <CardWrapper posts={posts} isLoading={isLoading} />
     </Layout>
   );
 };

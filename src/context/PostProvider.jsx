@@ -8,14 +8,11 @@ export const PostProvider = ({ children }) => {
   );
   const [isLoading, setIsLoading] = useState(false);
   const [posts, setPosts] = useState([]);
+  const [favoritePosts, setFavoritePosts] = useState([]);
 
+  const [hitsPerPage] = useState(50);
   const [currentPage, setCurrentPage] = useState(1);
-  const[recordsPerPage] = useState(10);
-
-  const indexOfLastRecord = currentPage * recordsPerPage;
-  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-
-  const currentRecords = posts.slice(indexOfFirstRecord, indexOfLastRecord);
+  const [recordsPerPage] = useState(10);
 
   const nPages = Math.ceil(posts.length / recordsPerPage);
 
@@ -24,13 +21,28 @@ export const PostProvider = ({ children }) => {
     setOptionValue(clearValue);
   };
 
+  const handlePostsFavorites = (id) => {
+    setIsLoading(true);
+    const postSelected = posts.find((post) => post.objectID === id);
+    console.log(postSelected)
+    const alreadyExist = favoritePosts.some(fav => fav.objectID === postSelected.objectID);
+    console.log(alreadyExist)
+    if(!alreadyExist) {
+      setFavoritePosts([...favoritePosts, postSelected])
+      console.log(favoritePosts)
+    }
+    setIsLoading(false);
+      
+    
+  };
+
   useEffect(() => {
     localStorage.setItem("filter", JSON.stringify(optionValue));
   }, [optionValue]);
 
   const searchByDate = async (value = "angular") => {
     try {
-      const url = `http://hn.algolia.com/api/v1/search_by_date?query=${value}&page=${currentPage}&hitsPerPage=100`;
+      const url = `http://hn.algolia.com/api/v1/search_by_date?query=${value}&page=${currentPage}&hitsPerPage=${hitsPerPage}`;
       const response = await fetch(url);
       const { hits } = await response.json();
       setPosts(noEmptyPosts(hits));
@@ -46,16 +58,6 @@ export const PostProvider = ({ children }) => {
     searchByDate(optionValue);
   }, [optionValue, currentPage]);
 
-
-
-
-
-
-  
-
-
-
-
   return (
     <PostContext.Provider
       value={{
@@ -65,7 +67,9 @@ export const PostProvider = ({ children }) => {
         isLoading,
         nPages,
         currentPage,
-        setCurrentPage
+        setCurrentPage,
+        handlePostsFavorites,
+        favoritePosts
       }}
     >
       {children}

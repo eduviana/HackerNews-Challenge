@@ -1,15 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ClipLoader } from "react-spinners";
 import { PostContext } from "../context/PostContext";
 import Card from "./Card";
 import styles from "../styles/CardWrapper.module.css";
-import { noEmptyPosts } from "../helpers/filterNoEmptyPosts";
 
-const CardWrapper = () => {
-  const { posts, isLoading } = useContext(PostContext);
 
-  console.log(posts)
- 
+const CardWrapper = ({ posts, isLoading }) => {
+  
+
+
   return (
     <div className="container">
       {
