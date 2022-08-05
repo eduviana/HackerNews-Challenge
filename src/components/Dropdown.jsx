@@ -8,17 +8,26 @@ const Dropdown = () => {
 const { optionPicked } = useContext(PostContext);
 
 
-
   return (
     <div className="container">
-      <select onChange={(e) => optionPicked(e.target.value)} className={styles.select__container}>
-        <option defaultValue  hidden>
+      <select id="frameworks" onChange={ (e) => optionPicked(e.target.value) } className={styles.select__container}>
+        <option hidden>
           Select your news
         </option>
-        <option value="angular">Angular</option>
+        <option defaultValue="angular">Angular</option>
         <option value="reactjs">Reactjs</option>
         <option value="vuejs">Vuejs</option>
       </select>
+
+      {/* <select onChange={(e) => optionPicked(e.target.value)} className={styles.select__container}>
+        <option hidden>
+          Select your news
+        </option>
+        <option defaultValue="angular">Angular</option>
+        <option value="reactjs">Reactjs</option>
+        <option value="vuejs">Vuejs</option>
+      </select> */}
+     
 
 
 

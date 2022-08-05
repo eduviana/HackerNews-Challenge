@@ -1,5 +1,4 @@
 export const noEmptyPosts = (posts) => {
-    
   const postsFiltered = posts.filter((post) => {
     const { author, story_title, story_url, created_at } = post;
     if (
@@ -8,11 +7,10 @@ export const noEmptyPosts = (posts) => {
       typeof story_url === "object" ||
       typeof created_at === "object"
     ) {
-      console.log("vinieron mal");
       return;
     } else {
       return post;
     }
   });
-  return postsFiltered
+  return postsFiltered;
 };
