@@ -42,4 +42,4 @@ Funcionalidades:
 
 - Eduardo Daniel Viana
 - Email: eduardoviana83@gmail.com
-- [Github](https://github.com/eduviana)
+
