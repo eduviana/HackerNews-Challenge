@@ -38,7 +38,7 @@ export const PostProvider = ({ children }) => {
 
   const searchByDate = async (value = "Angular") => {
     try {
-      const url = `http://hn.algolia.com/api/v1/search_by_date?query=${value}&page=${currentPage}&hitsPerPage=${hitsPerPage}`;
+      const url = `https://hn.algolia.com/api/v1/search_by_date?query=${value}&page=${currentPage}&hitsPerPage=${hitsPerPage}`;
       const response = await fetch(url);
       const { hits } = await response.json();
       setPosts(noEmptyPosts(hits));
