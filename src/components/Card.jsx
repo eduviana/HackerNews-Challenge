@@ -7,12 +7,12 @@ import ClockIcon from "./ClockIcon";
 import HeartRegularIcon from "./HeartRegularIcon";
 import HeartSolidIcon from "./HeartSolidIcon";
 
-const Card = ({ post }) => {
+const Card = ({ post, toggleFav }) => {
   const { author, story_title, story_url, created_at, objectID } = post;
 
   const { handlePostsFavorites } = useContext(PostContext);
 
-  const [toggleIcon, setToggleIcon] = useState(false);
+  const [toggleIcon, setToggleIcon] = useState(toggleFav);
 
   return (
     <div className={styles.wrapper}>

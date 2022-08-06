@@ -8,13 +8,19 @@ export const PostProvider = ({ children }) => {
   );
   const [isLoading, setIsLoading] = useState(false);
   const [posts, setPosts] = useState([]);
-  const [favoritePosts, setFavoritePosts] = useState([]);
+  const [favoritePosts, setFavoritePosts] = useState(
+    JSON.parse(localStorage.getItem("favorites")) || []
+  );
+  
+  
 
   const [hitsPerPage] = useState(50);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
 
   const nPages = Math.ceil(posts.length / recordsPerPage);
+
+  const nPagesFav = Math.ceil(favoritePosts.length / recordsPerPage);
 
   const optionPicked = (value) => {
     const clearValue = value.trim().toLowerCase();
@@ -28,13 +34,17 @@ export const PostProvider = ({ children }) => {
     const alreadyExist = favoritePosts.some(fav => fav.objectID === postSelected.objectID);
     console.log(alreadyExist)
     if(!alreadyExist) {
-      setFavoritePosts([...favoritePosts, postSelected])
+      setFavoritePosts([...favoritePosts, postSelected]);
+      localStorage.setItem("favorites", JSON.stringify(favoritePosts))
       console.log(favoritePosts)
     }
     setIsLoading(false);
-      
-    
   };
+
+  // useEffect(() => {
+  //   localStorage.setItem("favorites", JSON.stringify(favoritePosts));
+  // }, [favoritePosts])
+  
 
   useEffect(() => {
     localStorage.setItem("filter", JSON.stringify(optionValue));
@@ -66,6 +76,7 @@ export const PostProvider = ({ children }) => {
         posts,
         isLoading,
         nPages,
+        nPagesFav,
         currentPage,
         setCurrentPage,
         handlePostsFavorites,

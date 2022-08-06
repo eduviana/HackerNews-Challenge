@@ -5,8 +5,9 @@
   align-items: center;
 }
 
-.button,
-.button__active {
+.button {
+  color: var(--color-font-three);
+  border: 1.5px solid #d6d6d6;
   font-family: var(--font-two);
   font-size: var(--font-three-size);
   line-height: var(--font-three-line-height);
@@ -18,3 +19,16 @@
   text-align: center;
 }
 
+.button__active {
+  color: #1797ff;
+  border: 1.5px solid #1797ff;
+  font-family: var(--font-two);
+  font-size: var(--font-three-size);
+  line-height: var(--font-three-line-height);
+  width: 6.125rem;
+  border-radius: 0.125rem;
+  font-weight: 500;
+  background-color: var(--main-bg-color);
+  text-decoration: none;
+  text-align: center;
+}

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { ClipLoader } from "react-spinners";
-import { PostContext } from "../context/PostContext";
 import Card from "./Card";
 import styles from "../styles/CardWrapper.module.css";
 
@@ -16,7 +15,7 @@ const CardWrapper = ({ posts, isLoading }) => {
         ? <div className="center"><ClipLoader /></div>
         :  <div className={styles.cards__container}>
         {posts.map((post) => (
-          <Card key={post.objectID} post={post} />
+          <Card key={post.objectID} post={post}  />
         ))}
       </div>
       }

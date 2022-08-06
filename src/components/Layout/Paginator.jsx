@@ -46,36 +46,3 @@ const Paginator = ({ nPages, currentPage, setCurrentPage }) => {
 };
 
 export default Paginator;
-
-{
-  /* <button className={styles.button} onClick={() => setCurrentPage(1)}>
-1
-</button>
-<button
-className={styles.button__active}
-onClick={() => setCurrentPage(2)}
->
-2
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(3)}>
-3
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(4)}>
-4
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(5)}>
-5
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(6)}>
-6
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(7)}>
-7
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(8)}>
-8
-</button>
-<button className={styles.button} onClick={() => setCurrentPage(9)}>
-9
-</button> */
-}
