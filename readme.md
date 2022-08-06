@@ -40,6 +40,6 @@ Funcionalidades:
 
 ## Authors
 
-Eduardo Daniel Viana
-Email: eduardoviana83@gmail.com
-[Eduardo Viana](https://github.com/eduviana)
+- Eduardo Daniel Viana
+- Email: eduardoviana83@gmail.com
+- [Eduardo Viana](https://github.com/eduviana)
