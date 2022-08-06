@@ -3,7 +3,7 @@ import { PostContext } from "../../context/PostContext";
 import styles from "../../styles/Paginator.module.css";
 
 const Paginator = ({ nPages, currentPage, setCurrentPage }) => {
-  const { isLoading, posts } = useContext(PostContext);
+  const { isLoading } = useContext(PostContext);
 
   const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
 

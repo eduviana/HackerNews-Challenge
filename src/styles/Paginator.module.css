@@ -25,3 +25,14 @@
   background-color: #1890ff;
   color: #fff;
 }
+
+
+
+.button:hover {
+  /* border: solid 1px #555151; */
+  background-color: #efefef;
+}
+
+.button__active:hover {
+  background-color: #1890ff;
+}

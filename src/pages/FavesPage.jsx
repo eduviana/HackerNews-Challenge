@@ -5,12 +5,12 @@ import Paginator from "../components/Layout/Paginator";
 import { PostContext } from "../context/PostContext";
 
 const FavesPage = () => {
-  const { favoritePosts, isLoading, nPagesFav, currentPage, setCurrentPage } = useContext(PostContext);
+  const { favHitsToShowPerPage, isLoading, nPagesFav, currentPage, setCurrentPage } = useContext(PostContext);
 
 
   return (
     <Layout>
-      <CardWrapper posts={favoritePosts} isLoading={isLoading} />
+      <CardWrapper posts={favHitsToShowPerPage} isLoading={isLoading} />
       <Paginator
         nPages={nPagesFav}
         currentPage={currentPage}
