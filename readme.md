@@ -1,4 +1,5 @@
-[iamgen de la pagina](HackerNewsScreenshot.png)
+![home page](home.png)
+![favorite page](fav.png)
 
 # Título del Proyecto
 
